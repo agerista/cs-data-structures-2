@@ -4,8 +4,10 @@ Recursion
 into a smaller problem that is easier to solve.  An example would be summing a 
 big list of numbers.  It is difficult to add all of the numbers at the same time,
 but easy to add 2 numbers.  Recursion is the process of breaking down that big
-list of numbers into 2 numbers so that you can easily add and repeating that process 
-until you have the sum of the big list of numbers.
+list of numbers into 2 numbers so that you can easily add. You repeate that adding 
+two numbers until you get through all of the numbers in the list. Thus you solve 
+your big problem by doing the same small problem repeatedly.
+
 
 2. It is important to have a base case so that your function knows when to stop.
 If you do not create a base case for your recursive function, you will likely
@@ -16,7 +18,7 @@ Graphs
 
 1. A graph is a data structure that has nodes and edges. A node is the basic unit
 of a graph which contains data. An edge is what connects two nodes. Nodes are said
-to be adjacent if they share an edge. They are used to model relationships between
+to be adjacent if they share an edge. Graphs are used to model relationships between
 two things. 
 
 2. Graphs and trees are similar. In general, trees move in one direction from root to children and they are hierarchical. Graphs are cyclical and are not hierarchical. 
