@@ -1,0 +1,93 @@
+Recursion
+
+1. Recursion is a function calling itself.  It is a way to break a big problem down
+into a smaller problem that is easier to solve.  An example would be summing a 
+big list of numbers.  It is difficult to add all of the numbers at the same time,
+but easy to add 2 numbers.  Recursion is the process of breaking down that big
+list of numbers into 2 numbers so that you can easily add and repeating that process 
+until you have the sum of the big list of numbers.
+
+2. It is important to have a base case so that your function knows when to stop.
+If you do not create a base case for your recursive function, you will likely
+encounter max recursion depth.  Python has a built-in maximum recursion depth of 
+1000. You could change this limit, but doing so is dangerous.  
+
+Graphs
+
+1. A graph is a data structure that has nodes and edges. A node is the basic unit
+of a graph which contains data. An edge is what connects two nodes. Nodes are said
+to be adjacent if they share an edge. They are used to model relationships between
+two things. 
+
+2. Graphs and trees are similar. In general, trees move in one direction from root to children and they are hierarchical. Graphs are cyclical and are not hierarchical. 
+All trees are graphs, but not all graphs are trees.
+
+3. The six degrees of Kevin Bacon game could be solved using a graph. The concept 
+is to start with a random actor and try to link that actor to Kevin bacon within
+six links, a shorter path would win. Theoretically any actor in Hollywood should 
+link to Kevin Bacon within six steps. A graph would help you see the relationship
+between actors and movies and plot the shortest path between a random actor and 
+Kevin Bacon. You could be the star of film buff movie trivia parties in no time.
+
+
+/////////////////////////////////////////////
+//Performance of Different Data Structures//
+////////////////////////////////////////////
+
+Data Structure                  Index   Search  Add-R   Add-L   Pop-L   Pop-R
+--------------------------------------------------------------------------------
+Python List (Array)             O(1)    O(n)    O(1)    O(n)    O(1)    O(1)
+Linked List                     O(n)    O(n)    O(1)    O(1)    O(1)    O(n)
+Doubly-Linked List              O(n)    O(n)    O(1)    O(1)    O(1)    O(1)
+Queue (as Array)                X       X       O(1)     X      O(n)     X
+Queue (as LL or DLL)            X       X       O(1)     X      O(1)     X
+Stack (as Array, LL, or DLL)    X       X       O(1)     X      X       O(1)
+Deque (as DLL)                  X       X       O(1)     O(1)   O(1)    O(1)
+
+
+///////////////////////
+//Runtime and Memory//
+//////////////////////
+
+Data Structure              Get         Add         Delete      Iterate     Memory
+Dictionary (Hash Map)       O(1)        O(1)        O(1)        O(n)        medium
+Set (Hash Map)              O(1)        O(1)        O(1)        O(n)        medium    
+Binary Search Tree          O(log n)    O(log n)    O(log n)    O(n)        little
+Tree                        O(n)        O(1)        O(1)        O(n)        little
+
+Sorting
+
+1. The Bubble Sort algorithm starts at the left end of the list (list[0] and 
+list[1]) and compares 2 elements at a time. The smaller item moves (or stays) to 
+the left (list[0]) the bigger item moves (or stays) to the right (list[1]).  
+Then it moves one element over (list[1] and list[2])and compares those 2 elements. It continues this process for the length of the list. After the first pass, the biggest
+number has "bubbled up" to the right of the list.  The rest of the list is not 
+necessarily sorted. So it will do another pass. After the second pass, the second
+highest number will be the second from the right.  It will continue this process
+until all items are sorted.
+
+2. Merge Sort is in fact done in two main parts.  First, a recursive sort function is 
+called on a list to cut the list in half ([4,3,2,1] becomes [4,3],[2,1]). The 
+recursive function is then called again on the left list, cutting it in half 
+([4,3] becomes [4],[3]). Now that we know that we have sorted lists, the second 
+part of Merge Sort takes place, a merge function takes those two lists and merges 
+them together with the smaller item on the left and the bigger item on the right 
+([4],[3] becomes [3, 4]). Then it moves back up to the other half of the original 
+list ([2,1]) and the recursive function is called on that half of the list, cutting 
+it in half again ([2,1] becomes [2], [1]). Our lists are sorted, so we move on to
+the merge function ([2],[1] becomes [1,2]). We still have two lists ([3,4], [1,2]),
+so we continue with our merging ([3,4], [1,2] becomes [1,2,3,4]) and we now have
+a sorted list.
+
+
+3. Quick Sort works with a 'pivot', so a random index within our list is chosen
+(lst = [3,2,5,7,1], pivot = lst[2]). We check each number in the list, and make 3
+new temporary lists to help us sort. Items that are lower than our pivot move to 
+low_list([3,2,1]), pivot is its own list ([5]), and higher items are moved to high_list 
+([7]). In this example, pivot and high_list are sorted, so we do not need to do 
+further work there. Low_list is not sorted, so we pick a new pivot within low_list
+(low_list = [3,2,1] pivot = low_list[1]). We again check each number in the list, 
+creating our three new temporary lists (low_list = [1], pivot = [2] high_list = [3]).
+Our lists are now sorted, so we concatenate the temporary lists (low_list = [1], pivot = [2] high_list = [3] becomes [1,2,3]). Since our other two lists are already sorted
+in this example, we can also concatenate those two lists at this point and we end 
+up with a sorted list([1,2,3,5,7])
